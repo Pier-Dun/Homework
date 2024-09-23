@@ -1,5 +1,4 @@
 def calculate_structure_sum(*args):
-    global counter
     result = 0
     for i in args:
         if isinstance(i, list) or isinstance(i, tuple) or isinstance(i, set):
