@@ -4,14 +4,7 @@ def calculate_structure_sum(*args):
         if isinstance(i, list) or isinstance(i, tuple) or isinstance(i, set):
             result += calculate_structure_sum(*i)
         elif isinstance(i, dict):
-            for j, k in i.items():
-                if isinstance(j, tuple) or isinstance(j, set):
-                    result += calculate_structure_sum(j)
-                elif isinstance(j, str):
-                    result += len(j)
-                else:
-                    result += j
-                result += calculate_structure_sum(k)
+            result += calculate_structure_sum(*i.items())
         elif isinstance(i, str):
             result += len(i)
         else:
