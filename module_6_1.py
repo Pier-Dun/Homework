@@ -8,10 +8,10 @@ class Animal:
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
-            Animal.fed = True
+            self.fed = True
         else:
             print(f'{self.name} не стал есть {food.name}')
-            Animal.alive = False
+            self.alive = False
 
 class Plant:
     edible = False
