@@ -57,6 +57,7 @@ class Triangle(Figure):
     def get_square(self):
         return ((0.5 * sum(self.get_sides())) * ((0.5 * sum(self.get_sides())) - self.get_sides()[0]) * ((0.5 * sum(self.get_sides())) - self.get_sides()[1]) * ((0.5 * sum(self.get_sides())) - self.get_sides()[2])) ** 0.5
 
+
 class Cube(Figure):
     sides_count = 12
     def __init__(self, color, *sides):
