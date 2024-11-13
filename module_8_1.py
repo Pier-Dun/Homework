@@ -1,7 +1,7 @@
 def add_everything_up(a, b):
     try:
         return f'{(a + b):.3f}'
-    except TypeError as exc:
+    except:
         return str(a) + str(b)
 
 
