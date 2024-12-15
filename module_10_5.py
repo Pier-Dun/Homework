@@ -1,4 +1,3 @@
-import multiprocessing
 from multiprocessing import Pool
 import time
 
@@ -11,23 +10,21 @@ def read_info(name):
                 all_data.append(line)
             else:
                 break
-    return all_data
 
-
-
-filenames = [f'Files\\file {number}.txt' for number in range(1, 5)]
-
-# Линейный вызов
-start = time.time()
-for name in filenames:
-    read_info(name)
-end = time.time()
-print(end - start)
-
-# Многопроцессный
 if __name__ == '__main__':
+
+    filenames = [f'Files\\file {number}.txt' for number in range(1, 5)]
+
+    # Линейный вызов
     start = time.time()
-    with Pool(4) as p:
-        map(read_info, filenames)
-    end = time.time()
-    print(end - start)
+    for name in filenames:
+        read_info(name)
+    end = time.time() - start
+    print(end)
+
+    # Многопроцессный
+    start = time.time()
+    with Pool(processes=4) as p:
+        p.map(read_info, filenames)
+    end = time.time() - start
+    print(end)
