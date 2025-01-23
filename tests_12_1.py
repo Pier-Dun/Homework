@@ -35,5 +35,5 @@ class RunnerTest(unittest.TestCase):
             walker.walk()
         self.assertNotEqual(runner_.distance, walker.distance)
 
-if __name__ == 'main':
+if __name__ == '__main__':
     unittest.main()
