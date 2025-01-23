@@ -48,5 +48,5 @@ class TournamentTest(unittest.TestCase):
         print(*[dict(i) for i in s], sep='\n')
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     unittest.main()
