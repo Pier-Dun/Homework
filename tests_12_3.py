@@ -1,5 +1,4 @@
 import unittest
-import runner
 import runner_and_tournament as rat
 
 
@@ -13,7 +12,7 @@ class RunnerTest(unittest.TestCase):
         test for walk method in runner
         :return:
         """
-        walker = runner.Runner('walker')
+        walker = rat.Runner('walker')
         for i in range(10):
             walker.walk()
         self.assertEqual(walker.distance, 50)
@@ -24,7 +23,7 @@ class RunnerTest(unittest.TestCase):
         test for run method in runner
         :return:
         """
-        runner_ = runner.Runner('runner')
+        runner_ = rat.Runner('runner')
         for i in range(10):
             runner_.run()
         self.assertEqual(runner_.distance, 100)
@@ -35,8 +34,8 @@ class RunnerTest(unittest.TestCase):
         test for compare walk and run method in runner
         :return:
         """
-        walker = runner.Runner('walker')
-        runner_ = runner.Runner('runner')
+        walker = rat.Runner('walker')
+        runner_ = rat.Runner('runner')
         for i in range(10):
             runner_.run()
             walker.walk()
